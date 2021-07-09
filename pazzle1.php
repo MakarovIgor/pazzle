@@ -4,9 +4,18 @@ assert(even_to_zero(12345) == 10305);
 
 function even_to_zero(int $number): int
 {
-    return (int)implode(array_map(function ($number) {
-        return ($number % 2) ? $number : 0;
-    }, str_split($number)));
+    $numbers = str_split($number);
+    for ($i = 0; $i < count($numbers); $i++) {
+        if ($i % 2) {
+            $numbers[$i] = 0;
+        }
+    }
+    return (int)implode($numbers);
+
+/*    var_dump((int)implode(array_map(function ($num, $index) {
+        var_dump($index, $num);
+        return ($index % 2) ? $index : 0;
+    }, str_split($number), array_keys(str_split($number)))));*/
 }
 
 
