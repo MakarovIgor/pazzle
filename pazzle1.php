@@ -2,7 +2,7 @@
 
 assert(even_to_zero(12345) == 10305);
 
-function even_to_zero(int $number)
+function even_to_zero(int $number): int
 {
     return (int)implode(array_map(function ($number) {
         return ($number % 2) ? $number : 0;
@@ -12,7 +12,7 @@ function even_to_zero(int $number)
 
 assert(is_palindrom("kayak") == true);
 
-function is_palindrom(string $word)
+function is_palindrom(string $word): string
 {
     return $word == strrev($word);
 }
