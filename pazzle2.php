@@ -4,7 +4,7 @@
 // которые делятся на 3 без отстатка. В тестах проверьте что первый,
 // последний и любой некрайний элемент списка действительно делятся на 3
 
-assert(three_devide_range(9, 0) == [9, 6, 3, 0]);
+assert(three_devide_range(10, 0) == [9, 6, 3, 0]);
 
 function three_devide_range(int $max, int $min): array
 {
