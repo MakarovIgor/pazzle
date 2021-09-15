@@ -5,6 +5,7 @@ assert(sumn(3) == 6);
 assert(sumn(5) == 15);
 assert(sumn(7) == 28);
 assert(sumn(0) == 0);
+
 function sumn(int $number): int
 {
     if ($number == 0) {
@@ -31,5 +32,16 @@ function create_min_max_validator(int $min, int $max)
         throw new Exception("min cannot be more or equals than max");
     }
 
-    return fn (int $number) => $number >= $min && $number <= $max;
+    return fn(int $number) => $number >= $min && $number <= $max;
+}
+
+//Написать функцию add_item($arr, $item), которая ничего не возвращает,
+// но при этом добавляет в конец массива $arr элемент $item
+$arr = [];
+add_item($arr, "s");
+add_item($arr, "d");
+assert(count($arr) == 2);
+function add_item(array &$array, $item)
+{
+    array_push($array, $item);
 }
